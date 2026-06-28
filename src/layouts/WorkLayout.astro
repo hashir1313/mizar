@@ -8,33 +8,11 @@ import Share from "@/components/primitives/Share.astro";
 import Title from "@/components/primitives/Title.astro";
 import { loadVideo } from "@/lib/asset-helpers";
 import { Icon } from "astro-icon/components";
-import { defaultLocale } from "site";
 import BaseLayout from "./BaseLayout.astro";
 
 type Props = {
 	frontmatter: CollectionEntry<"works">;
 };
-
-const currentLocale = Astro.currentLocale;
-
-interface WorkLayoutLocale {
-	visitProject: string;
-}
-
-interface ComponentLocales {
-	[key: string]: WorkLayoutLocale;
-}
-
-const componentLocales: ComponentLocales = {
-	it: {
-		visitProject: "Visita progetto",
-	},
-	en: {
-		visitProject: "Visit project",
-	},
-};
-
-const l = componentLocales[currentLocale ?? defaultLocale];
 
 const { frontmatter } = Astro.props;
 
@@ -59,7 +37,7 @@ const videoSrc = frontmatter.data?.video
 							class="mt-10"
 							style="outline"
 						>
-							{l.visitProject}
+							Visit project
 							<Icon
 								name="iconamoon:arrow-top-right-1-thin"
 								class="inline-block w-6 h-6 ml-2"

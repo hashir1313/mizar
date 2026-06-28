@@ -84,7 +84,6 @@ declare global {
 
 	interface PathParams<CollectionName extends keyof ContentEntryMap> {
 		params: {
-			lang: string;
 			slug: string | undefined;
 		};
 		props: CollectionProps<CollectionName>;
