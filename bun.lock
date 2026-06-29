@@ -1,5 +1,6 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "@majesticooss/mizar",
@@ -18,6 +19,7 @@
         "astro": "4.7.0",
         "gsap": "^3.12.5",
         "keystatic-components": "^0.0.2",
+        "optional": "^0.1.4",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
       },
@@ -36,21 +38,22 @@
         "@types/alpinejs": "^3.13.10",
         "@types/react": "^18.3.3",
         "@types/react-dom": "^18.3.0",
-        "@vite-pwa/assets-generator": "^0.2.4",
+        "@vite-pwa/assets-generator": "^0.2.6",
         "@vite-pwa/astro": "^0.4.0",
         "astro-icon": "^1.1.0",
         "astro-robots-txt": "^1.0.0",
         "astro-seo": "^0.8.3",
         "satori": "^0.10.13",
         "sharp": "0.33.4",
+        "sharp-ico": "^0.1.5",
         "tailwindcss": "^3.4.3",
         "workbox-window": "^7.1.0",
       },
     },
   },
   "overrides": {
-    "sharp": "0.33.4",
     "gsap": "^3.12.5",
+    "sharp": "0.33.4",
   },
   "packages": {
     "@0no-co/graphql.web": ["@0no-co/graphql.web@1.1.1", "", { "peerDependencies": { "graphql": "^14.0.0 || ^15.0.0 || ^16.0.0" }, "optionalPeers": ["graphql"] }, "sha512-F2i3xdycesw78QCOBHmpTn7eaD2iNXGwB2gkfwxcOfBbeauYpr8RBSyJOkDrFtKtVRMclg8Sg3n1ip0ACyUuag=="],
@@ -1764,6 +1767,8 @@
     "onetime": ["onetime@6.0.0", "", { "dependencies": { "mimic-fn": "^4.0.0" } }, "sha512-1FlR+gjXK7X+AsAHso35MnyN5KqGwJRi/31ft6x0M194ht7S+rWAvd7PHss9xSKMzE0asv1pyIHaJYq+BbacAQ=="],
 
     "oniguruma-to-es": ["oniguruma-to-es@2.3.0", "", { "dependencies": { "emoji-regex-xs": "^1.0.0", "regex": "^5.1.1", "regex-recursion": "^5.1.1" } }, "sha512-bwALDxriqfKGfUufKGGepCzu9x7nJQuoRoAFp4AnwehhC2crqrDIAP/uN2qdlsAvSMpeRC3+Yzhqc7hLmle5+g=="],
+
+    "optional": ["optional@0.1.4", "", {}, "sha512-gtvrrCfkE08wKcgXaVwQVgwEQ8vel2dc5DDBn9RLQZ3YtmtkBss6A2HY6BnJH4N/4Ku97Ri/SF8sNWE2225WJw=="],
 
     "ora": ["ora@8.2.0", "", { "dependencies": { "chalk": "^5.3.0", "cli-cursor": "^5.0.0", "cli-spinners": "^2.9.2", "is-interactive": "^2.0.0", "is-unicode-supported": "^2.0.0", "log-symbols": "^6.0.0", "stdin-discarder": "^0.2.2", "string-width": "^7.2.0", "strip-ansi": "^7.1.0" } }, "sha512-weP+BZ8MVNnlCm8c0Qdc1WSWq4Qn7I+9CJGm7Qali6g44e/PUzbjNqJX5NJ9ljlNMosfJvg1fKEGILklK9cwnw=="],
 
