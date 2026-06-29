@@ -2,11 +2,8 @@
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { loadVideo } from "@/lib/asset-helpers";
-import { translatePath, unlocalizedUrl } from "@/lib/localization-helpers";
+import { unlocalizedUrl } from "@/lib/localization-helpers";
 import { Icon } from "astro-icon/components";
-import { defaultLocale } from "site";
-
-const currentLocale = Astro.currentLocale;
 
 interface Props {
 	work: CollectionEntry<"works">;
@@ -15,10 +12,7 @@ interface Props {
 const { work } = Astro.props;
 
 const unlocalizedPath = unlocalizedUrl(work.slug);
-const localizedPath = translatePath(
-	currentLocale ?? defaultLocale,
-	`/work${unlocalizedPath}`,
-);
+const localizedPath = `/work${unlocalizedPath}`;
 
 const videoSrc = work.data?.video ? await loadVideo(work.data.video) : null;
 ---

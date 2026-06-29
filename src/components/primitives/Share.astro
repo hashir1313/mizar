@@ -4,9 +4,7 @@ import Link from "@/components/primitives/Link.astro";
 import { getLocalizedSettings } from "@/lib/localization-helpers";
 import { Icon } from "astro-icon/components";
 
-const currentLocale = Astro.currentLocale;
-
-const { contacts } = getLocalizedSettings(currentLocale);
+const { contacts } = getLocalizedSettings();
 
 const currentPage = Astro.url;
 
@@ -41,11 +39,11 @@ const availableShare = [
 				if (navigator.share) {
 					navigator
 						.share({
-							title: "Condividi",
+							title: "Share",
 							url: window.location.href,
 						})
 						.then(() => {
-							console.log("Grazie per la condivisione!");
+							console.log("Thanks for sharing!");
 						})
 						.catch(console.error);
 				} else {
@@ -63,7 +61,7 @@ const availableShare = [
 		@click="openSocialModal()"
 	>
 		<Icon size={22} name="ic:outline-share" />
-		<span>Condividi</span>
+		<span>Share</span>
 	</Button>
 
 	<Link
@@ -73,12 +71,12 @@ const availableShare = [
 		style="outline"
 	>
 		<Icon size={23} name="ic:outline-mail" />
-		<span class="hidden sm:inline-block">Scrivici</span>
+		<span class="hidden sm:inline-block">Email us</span>
 	</Link>
 
 	<Link class="flex gap-3" href="#top" size="md" style="outline">
 		<Icon size={23} name="ic:sharp-vertical-align-top" />
-		<span class="hidden sm:inline-block">Torna all'inizio</span>
+		<span class="hidden sm:inline-block">Back to top</span>
 	</Link>
 
 	<template x-teleport="body">
@@ -111,7 +109,7 @@ const availableShare = [
 				class="relative w-full bg-white px-7 py-6 sm:max-w-lg sm:rounded-lg"
 			>
 				<div class="flex items-center justify-between pb-2">
-					<h3 class="text-lg font-semibold">Condividi</h3>
+					<h3 class="text-lg font-semibold">Share</h3>
 					<button
 						@click="modalOpen=false"
 						class="absolute right-0 top-0 mr-5 mt-5 flex h-8 w-8 items-center justify-center rounded-full text-gray-600 hover:bg-gray-50 hover:text-gray-800"
