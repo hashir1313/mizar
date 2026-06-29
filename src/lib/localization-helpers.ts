@@ -23,7 +23,8 @@ export function isLocalizedUrl(url: string): boolean {
 }
 
 export function unlocalizedUrl(url: string): string {
-	return url;
+	// Strip the "en/" prefix from content slugs
+	return url.replace(/^en\//, "");
 }
 
 export function translatePath(pathOrLocale: string, path?: string) {

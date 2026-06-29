@@ -10,7 +10,7 @@ export async function getCollectionStaticPaths<CollectionName extends keyof Cont
 	});
 
 	const paths = visibleItems.map((item) => {
-		const [lang, ...slug] = item.slug.split("/");
+		const [, ...slug] = item.slug.split("/");
 		let localizedSlug = slug;
 
 		if (collectionName === "pages") {
@@ -19,7 +19,6 @@ export async function getCollectionStaticPaths<CollectionName extends keyof Cont
 
 		return {
 			params: {
-				lang,
 				slug: localizedSlug.join("/") || undefined,
 			},
 			props: {

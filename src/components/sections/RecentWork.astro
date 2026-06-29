@@ -8,11 +8,10 @@ const works = await getCollection("works");
 
 const recentWorks = works
 	.map((work) => {
-		const [lang, ...slug] = work.slug.split("/");
+		const [, ...slug] = work.slug.split("/");
 		return {
 			...work,
-			lang: lang,
-			slug: work.slug.startsWith("/") ? work.slug : `/${work.slug}`,
+			slug: `/${slug.join("/")}`,
 		};
 	})
 	.sort(

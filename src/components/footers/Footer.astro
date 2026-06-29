@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import Container from "@/components/primitives/Container.astro";
 import Link from "@/components/primitives/Link.astro";
 import { getLocalizedSettings } from "@/lib/localization-helpers";
-import { translatePath, unlocalizedUrl } from "@/lib/localization-helpers";
+
 
 const { footer, contacts } = getLocalizedSettings();
 
@@ -14,10 +14,9 @@ const posts = await getCollection("posts");
 // get top 6 pages which are informational pages
 const topInfoPages = pages
 	.map((page) => {
-		const [lang, ...slug] = page.slug.split("/");
+		const [, ...slug] = page.slug.split("/");
 		return {
 			...page,
-			lang: lang,
 			slug: `/${slug.join("/")}`,
 		};
 	})
@@ -26,10 +25,9 @@ const topInfoPages = pages
 
 const topServices = services
 	.map((page) => {
-		const [lang, ...slug] = page.slug.split("/");
+		const [, ...slug] = page.slug.split("/");
 		return {
 			...page,
-			lang: lang,
 			slug: `/service/${slug.join("/")}`,
 		};
 	})
@@ -37,10 +35,9 @@ const topServices = services
 
 const lastPosts = posts
 	.map((page) => {
-		const [lang, ...slug] = page.slug.split("/");
+		const [, ...slug] = page.slug.split("/");
 		return {
 			...page,
-			lang: lang,
 			slug: `/post/${slug.join("/")}`,
 		};
 	})
