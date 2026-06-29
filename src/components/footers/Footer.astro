@@ -8,21 +8,12 @@ const { footer, contacts } = getLocalizedSettings();
 
 const pages = await getCollection("pages");
 const services = await getCollection("services");
-const posts = await getCollection("posts");
 
 const topInfoPages = pages
 	.filter((page) => page.data.type === "informational")
 	.slice(0, 6);
 
 const topServices = services.slice(0, 6);
-
-const lastPosts = posts
-	.sort(
-		(a, b) =>
-			new Date(b.data.lastUpdateDate).getTime() -
-			new Date(a.data.lastUpdateDate).getTime(),
-	)
-	.slice(0, 5);
 ---
 
 <div
@@ -64,7 +55,7 @@ const lastPosts = posts
 					</div>
 					<div class="mt-10">
 						<div
-							class="auto-cols-fr grid-cols-[1fr_1fr_1fr] grid-rows-[auto] grid gap-[1.88rem]"
+							class="auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto] grid gap-[1.88rem]"
 						>
 							<div class="col-span-1 row-span-1">
 								<div
@@ -106,26 +97,6 @@ const lastPosts = posts
 											({ data: { title }, slug }) => (
 												<li>
 													<a href={`/service/${slug}`}>{title}</a>
-												</li>
-											),
-										)
-									}
-								</ul>
-							</div>
-							<div
-								class="items-start flex-col flex gap-[0.63rem]"
-							>
-								<p
-									class="text-white border-b-2 text-lg pb-1 mb-3 border-white border-solid"
-								>
-									Latest posts
-								</p>
-								<ul class="text-white/[0.65] mb-3 list-none">
-									{
-										lastPosts.map(
-											({ data: { title }, slug }) => (
-												<li>
-													<a href={`/post/${slug}`}>{title}</a>
 												</li>
 											),
 										)
