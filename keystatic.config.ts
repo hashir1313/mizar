@@ -23,7 +23,8 @@ import { BrandMarkComponent } from "./.keystatic/mark";
 
 export default config({
 	storage: {
-		kind: "local",
+		kind: "github",
+		repo: "hashir1313/ahadanimates.com",
 	},
 	ui: {
 		brand: {
