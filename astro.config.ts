@@ -57,7 +57,7 @@ export default defineConfig({
 				theme_color: "#ffffff",
 			},
 			pwaAssets: {
-				config: false,
+				config: true,
 			},
 			workbox: {
 				navigateFallback: "/",
