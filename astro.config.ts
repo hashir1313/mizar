@@ -34,11 +34,6 @@ export default defineConfig({
 		define: {
 			__DATE__: `'${new Date().toISOString()}'`,
 		},
-		resolve: {
-			alias: {
-				"react-dom/server": "react-dom/server.edge",
-			},
-		},
 	},
 	integrations: [
 		alpinejs(),
