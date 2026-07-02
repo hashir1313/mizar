@@ -123,6 +123,16 @@ export default config({
 				title: fields.text({ label: "Title" }),
 				subtitle: fields.text({ label: "Subtitle" }),
 				copyright: fields.text({ label: "Copyright" }),
+				buttons: fields.array(
+					fields.object({
+						text: fields.text({ label: "Text" }),
+						url: fields.text({ label: "Url" }),
+					}),
+					{
+						label: "Buttons",
+						itemLabel: (props) => props.fields.text.value,
+					},
+				),
 				contacts: fields.object(
 					{
 						phone: fields.text({ label: "Phone" }),
